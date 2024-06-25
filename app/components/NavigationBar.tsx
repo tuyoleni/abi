@@ -2,11 +2,11 @@ import social from "@/app/elements/social";
 import contact from "@/app/elements/contact";
 import navigationLinks from "@/app/elements/navigationLinks";
 import Link from "next/link";
-import Logo from "@/app/elements/assets/branding/images";
+import Logo from "@/app/elements/assets/branding";
 
 export default function Navigation() {
     return (
-        <nav className={`fixed bg-white w-full top-0 right-0`}>
+        <nav className={`fixed bg-white w-full top-0 right-0 z-50`}>
             {/* Top navigation bar */}
             <div className="py-3">
                 <div className="mx-auto container sm:container md:container">
@@ -36,7 +36,7 @@ export default function Navigation() {
             {/* Bottom navigation bar */}
             <div className="bg-gray-100 py-4">
                 <div className="flex items-center justify-between mx-auto container sm:container md:container">
-                    <Logo size={10}/>
+                    <Logo size={60}/>
                     <ul className={`flex gap-4 font-semibold text-gray-500`}>
                         {Object.values(navigationLinks).map((link, index) => (
                                 <Link key={index} href={link.route} className={`hover:text-black`}>{link.label}</Link>
