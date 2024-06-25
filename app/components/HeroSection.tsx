@@ -1,8 +1,8 @@
 import React from "react";
 import ImageCarousel from "@/app/components/ImageCarousel";
-export default function HeroSection(){
-return(
-    <section className={`flex items-center justify-between py-20 mx-auto container sm:container md:container`}>
+
+const HeroSection = () => (
+    <section className="flex items-center justify-between py-20 mx-auto container">
         <div className="flex-1">
             <h1 className="text-7xl font-black mb-4 mr-8">
                 Expert Refrigeration, Air Conditioning, and Ventilation Services
@@ -16,8 +16,9 @@ return(
             </button>
         </div>
         <div className="flex-1">
-            <ImageCarousel/>
+            <ImageCarousel />
         </div>
     </section>
-)
-}
+);
+
+export default HeroSection;
