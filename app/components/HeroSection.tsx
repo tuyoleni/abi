@@ -3,7 +3,7 @@ import ImageCarousel from "@/app/components/ImageCarousel";
 
 const HeroSection = () => (
     <section className="flex items-center justify-between py-20 mx-auto container">
-        <div className="flex-1">
+        <div className="w-1/2">
             <h1 className="text-7xl font-black mb-4 mr-8">
                 Expert Refrigeration, Air Conditioning, and Ventilation Services
             </h1>
@@ -15,7 +15,7 @@ const HeroSection = () => (
                 Get in Touch
             </button>
         </div>
-        <div className="flex-1">
+        <div className="w-1/2 pl-24">
             <ImageCarousel />
         </div>
     </section>

@@ -5,17 +5,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import showcase from '@/app/elements/showcase';
 import { Image } from "@nextui-org/react";
-import { FaCaretRight } from "react-icons/fa6";
-import { FaCaretLeft } from "react-icons/fa6";
-
+import { FaCaretRight, FaCaretLeft } from "react-icons/fa6";
 
 export default function ImageCarousel() {
     return (
-        <div className="flex items-center gap-4 w-[600px] mx-auto">
-
-                <button className="swiper-button-prev-custom bg-white text-gray-800 p-2 rounded-full shadow-md">
-                    <FaCaretLeft />
-                </button>
+        <div className="flex items-center gap-4 mx-auto">
+            <button className="swiper-button-prev-custom bg-white text-gray-800 p-2 rounded-full shadow-md">
+                <FaCaretLeft />
+            </button>
 
             <Swiper
                 spaceBetween={0}
@@ -30,12 +27,11 @@ export default function ImageCarousel() {
             >
                 {Object.values(showcase).map((image, index) => (
                     <SwiperSlide key={index} className="flex justify-center items-center">
-                        <Image src={image.source} alt={image.name}/>
+                        <Image src={image.source} alt={image.name} />
                     </SwiperSlide>
                 ))}
             </Swiper>
 
-            {/* Custom navigation buttons */}
             <button className="swiper-button-next-custom bg-white text-gray-800 p-2 rounded-full shadow-md">
                 <FaCaretRight />
             </button>
