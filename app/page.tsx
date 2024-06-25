@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="w-full h-screen relative">
       <Navigation/>
-        <div className={`mt-[140px] bg-gray-50`}>
+        <div className={`mt-[140px]`}>
             <HeroSection/>
         </div>
     </main>
