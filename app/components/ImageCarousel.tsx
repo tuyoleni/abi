@@ -27,7 +27,7 @@ export default function ImageCarousel() {
             >
                 {Object.values(showcase).map((image, index) => (
                     <SwiperSlide key={index} className="flex justify-center items-center">
-                        <Image src={image.source} alt={image.name} />
+                        <Image src={image.source} alt={image.name}/>
                     </SwiperSlide>
                 ))}
             </Swiper>

@@ -3,8 +3,8 @@ import ImageCarousel from "@/app/components/ImageCarousel";
 import Logo from "@/app/elements/assets/branding";
 
 const HeroSection = () => (
-    <section className="bg-gray-50">
-        <div className={`flex items-center justify-between py-20 mx-auto container sm:container md:container `}>
+    <section className="relative bg-gray-50">
+        <div className={`flex items-center justify-between py-20 mx-auto container sm:container md:container relative z-10`}>
             <div className="w-1/2">
                 <h1 className="text-7xl font-black mb-4 mr-8">
                     Expert Refrigeration, Air Conditioning, and Ventilation Services
@@ -20,10 +20,9 @@ const HeroSection = () => (
             <div className="w-1/2 pl-24">
                 <ImageCarousel/>
             </div>
-
         </div>
 
-        <div className={`absolute bottom-0 -left-40 opacity-5`}>
+        <div className={`absolute -bottom-40 -left-40 opacity-5 z-0`}>
             <Logo size={900}/>
         </div>
     </section>
