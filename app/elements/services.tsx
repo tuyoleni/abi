@@ -1,6 +1,9 @@
 import { RiHomeGearLine } from "react-icons/ri";
 import { MdBusiness, MdOutlineEngineering } from "react-icons/md";
-
+import { FiPhoneCall } from "react-icons/fi";
+import { PiCertificateBold } from "react-icons/pi";
+import { FaGears } from "react-icons/fa6";
+import {ressi, ressii, commi, commii, commiii, mataini} from '@/app/elements/assets/images'
 
 const services = [
     {
@@ -9,8 +12,8 @@ const services = [
         icon: <RiHomeGearLine size={28}/>,
         data: {
             images: [
-                '/images/residential-ac-image1.jpg',
-                '/images/residential-ac-image2.jpg'
+                ressi.src,
+                ressii.src
             ],
             client: {
             //client data
@@ -24,8 +27,9 @@ const services = [
         ,
         data: {
             images: [
-                '/images/commercial-ac-image1.jpg',
-                '/images/commercial-ac-image2.jpg'
+                commi.src,
+                commii.src,
+                commiii.src
             ],
             client: {
                 kfc:{
@@ -58,8 +62,7 @@ const services = [
         ,
         data: {
             images: [
-                '/images/service-repair-image1.jpg',
-                '/images/service-repair-image2.jpg'
+                mataini.src,
             ],
             client: [
                 {
@@ -84,4 +87,12 @@ const services = [
     }
 ];
 
-export { services };
+
+const cardData = [
+    { icon: <FiPhoneCall size={28} />, text: 'Available 24 Hours' },
+    { icon: <PiCertificateBold size={28} />, text: 'Licenced and Insured' },
+    { icon: <FaGears size={28} />, text: 'Warranty and Maintenance' }
+];
+
+
+export { services, cardData };

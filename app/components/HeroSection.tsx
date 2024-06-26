@@ -4,7 +4,7 @@ import Logo from "@/app/elements/assets/branding";
 
 const HeroSection = () => (
     <section className="relative bg-gray-50 pb-36">
-        <div className={`flex items-center justify-between py-20 mx-auto container sm:container md:container relative z-10`}>
+        <div className={`flex items-center justify-between pt-20 mx-auto container sm:container md:container relative z-10`}>
             <div className="w-1/2">
                 <h1 className="text-7xl font-black mb-4 mr-8">
                     Expert Refrigeration, Air Conditioning, and Ventilation Services
