@@ -5,8 +5,6 @@ import Link from "next/link";
 import { motion } from 'framer-motion';
 import ServicesGrid from "@/app/components/services/ServiceGrid";
 
-
-
 const ServicesSection = () => {
     return (
         <div
@@ -17,12 +15,13 @@ const ServicesSection = () => {
                     {Object.values(services).map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 100 }}
+                            initial={{ opacity: 0, y: 60 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
+                            transition={{ duration: 0.8 }}
                             viewport={{ once: false }}
                             className={`rounded-md border border-primary-blue shadow-md mb-10`}>
                             <div className={`h-80 w-full bg-green-200`}>
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img src={service.data.images[0]} alt={service.description}  className={`object-cover size-full`}/>
                             </div>
                             <div className={`m-4 mt-8 relative`}>

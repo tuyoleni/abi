@@ -1,12 +1,16 @@
+'use client'
+import { usePathname } from 'next/navigation';
 import social from "@/app/elements/social";
 import contact from "@/app/elements/contact";
 import navigationLinks from "@/app/elements/navigationLinks";
 import Link from "next/link";
 import Logo from "@/app/elements/assets/branding";
 
-export default function Navigation() {
+export default function NavigationBar() {
+    const pathname = usePathname();
+
     return (
-        <nav className={`fixed bg-white w-full top-0 right-0 z-50`}>
+        <nav className="fixed bg-white w-full top-0 right-0 z-50">
             {/* Top navigation bar */}
             <div className="py-3">
                 <div className="mx-auto container sm:container md:container">
@@ -34,16 +38,31 @@ export default function Navigation() {
             </div>
 
             {/* Bottom navigation bar */}
-            <div className="bg-gray-100 py-4">
-                <div className="flex items-center justify-between mx-auto container sm:container md:container">
-                    <Logo size={60}/>
-                    <ul className={`flex gap-4 font-semibold text-gray-500`}>
+            <div className="bg-gray-100">
+                <div className="grid grid-cols-3 items-center gap-4 mx-auto h-24 container">
+                    {/* Logo at the start */}
+                    <div className="col-span-1">
+                        <Logo size={50}/>
+                    </div>
+
+                    {/* Navigation links in the middle */}
+                    <ul className="col-span-1 flex items-center justify-center gap-4 font-semibold h-full">
                         {Object.values(navigationLinks).map((link, index) => (
-                                <Link key={index} href={link.route} className={`hover:text-black`}>{link.label}</Link>
-                            )
-                        )}
+                            <li key={index} className="h-full">
+                                <Link href={link.route} className={`h-full grid items-center ${pathname===link.route?'border-b-4 border-primary-blue mt-[2px]': 'hover:border-b-4'}`}>
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
-                    <button className={`flex items-center gap-2 bg-primary-blue text-sm text-white font-semibold p-4 rounded`}>Get Started</button>
+
+                    {/* Button at the end */}
+                    <div className="col-span-1 flex items-center justify-end">
+                        <button
+                            className="w-40 flex items-center justify-center gap-2 bg-primary-blue text-sm text-white font-semibold p-3 rounded">
+                            Get Started
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
