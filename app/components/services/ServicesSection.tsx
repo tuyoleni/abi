@@ -1,19 +1,27 @@
+'use client'
 import React from 'react';
 import { services } from "@/app/elements/services";
 import Link from "next/link";
-import { Image } from "@nextui-org/react";
+import { motion } from 'framer-motion';
 import ServicesGrid from "@/app/components/services/ServiceGrid";
 
 
 
 const ServicesSection = () => {
     return (
-        <div className={`relative w-full h-full mb-4 z-40 -top-20`}>
+        <div
+            className={`relative w-full h-full mb-4 bg-gray-50 py-20`}>
             <div className={`mx-auto container`}>
                 <div
                     className="max-w-[1080px] mx-auto grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                     {Object.values(services).map((service, index) => (
-                        <div key={index} className={`rounded-md border border-primary-blue shadow-xl mb-10`}>
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 100 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: false }}
+                            className={`rounded-md border border-primary-blue shadow-md mb-10`}>
                             <div className={`h-80 w-full bg-green-200`}>
                                 <img src={service.data.images[0]} alt={service.description}  className={`object-cover size-full`}/>
                             </div>
@@ -29,7 +37,7 @@ const ServicesSection = () => {
                                       className={`font-semibold text-primary-blue opacity-80 hover:opacity-100 transition-all ease-in-out`}>Read
                                     More</Link>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                <ServicesGrid/>
