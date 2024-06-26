@@ -32,9 +32,7 @@ const ServicesSection = () => {
                                     <h1 className={`font-semibold text-xl mb-2`}>{service.name}</h1>
                                     <p className={`text-primary-blue`}>{service.description}</p>
                                 </div>
-                                <Link href={'/service'}
-                                      className={`font-semibold text-primary-blue opacity-80 hover:opacity-100 transition-all ease-in-out`}>Read
-                                    More</Link>
+                                <Link href={`/services/${service.name}`} className={`font-semibold text-primary-blue opacity-80 hover:opacity-100 transition-all ease-in-out`}>Read More</Link>
                             </div>
                         </motion.div>
                     ))}

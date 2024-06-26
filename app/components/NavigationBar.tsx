@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { usePathname } from 'next/navigation';
 import social from "@/app/elements/social";
 import contact from "@/app/elements/contact";
@@ -49,7 +49,7 @@ export default function NavigationBar() {
                     <ul className="col-span-1 flex items-center justify-center gap-4 font-semibold h-full">
                         {Object.values(navigationLinks).map((link, index) => (
                             <li key={index} className="h-full">
-                                <Link href={link.route} className={`h-full grid items-center ${pathname===link.route?'border-b-4 border-primary-blue mt-[2px]': 'hover:border-b-4'}`}>
+                                <Link href={link.route} prefetch={true} className={`h-full grid items-center mt-[2px] ${pathname===link.route?'border-b-4 border-primary-blue mt-[4px]': 'hover:border-b-4'}`}>
                                     {link.label}
                                 </Link>
                             </li>
