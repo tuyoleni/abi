@@ -7,7 +7,7 @@ import {ressi, ressii, commi, commii, commiii, mataini} from '@/app/elements/ass
 
 const services = [
     {
-        name: 'Residential A/C',
+        name: 'Residential',
         description: 'Installation, maintenance, and repair services for residential air conditioning systems.',
         icon: <RiHomeGearLine size={28}/>,
         data: {
@@ -21,7 +21,7 @@ const services = [
         }
     },
     {
-        name: 'Commercial A/C',
+        name: 'Commercial',
         description: 'Installation, maintenance, and repair services tailored for commercial air conditioning systems.',
         icon: <MdBusiness size={28}/>
         ,
